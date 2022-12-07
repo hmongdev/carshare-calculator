@@ -210,7 +210,7 @@ const App = () => {
                 <img src={hourCarLogo} alt="hourcar logo" className="w-1/2" />
             </div>
             <h1 className="text-center text-3xl py-3 text-blue-900 font-bold whitespace-nowrap">
-                Carshare Calculator
+                Carshare Trip Calculator
             </h1>
             <div id="city">
                 <h1 className="flex justify-center whitespace-nowrap font-bold w-full text-xl">
