@@ -194,7 +194,6 @@ const App = () => {
             setTaxCost(Number((cityTax * cost).toFixed(2)));
         } else {
             // actual calculation
-            alert(`actual calculation`);
             let minuteCost = userMinutes * carPlan.perMinute;
             let hourCost = userHours * carPlan.perHour;
             let dayCost = userDays * carPlan.perDay;
@@ -223,7 +222,7 @@ const App = () => {
                             key={id}
                             value={tax}
                             onClick={(e) => setCityTax(e.target.value)}
-                            className="bg-blue-900 text-white rounded-full mx-auto px-2 border-2 border-gray-500 w-[50vw]"
+                            className="bg-slate-500 focus:bg-blue-700 text-white rounded-full mx-auto px-2 border-2 border-gray-500 w-[50vw]"
                         >
                             {name}
                         </button>
@@ -238,14 +237,14 @@ const App = () => {
                     <button
                         onClick={(e) => setCarType(e.target.value)}
                         value="Evie"
-                        className="bg-green-600 text-white rounded-full mx-auto px-2 border-2 border-gray-500 w-[30vw]"
+                        className="focus:bg-green-600 bg-slate-500 text-white rounded-full mx-auto px-2 border-2 border-gray-500 w-[30vw]"
                     >
                         Evie
                     </button>
                     <button
                         onClick={(e) => setCarType(e.target.value)}
                         value="HOURCAR"
-                        className="bg-orange-600 text-white rounded-full mx-auto px-2 border-2 border-gray-500 w-[30%]"
+                        className="focus:bg-orange-600 bg-slate-500 text-white rounded-full mx-auto px-2 border-2 border-gray-500 w-[30%]"
                     >
                         HOURCAR
                     </button>
@@ -332,7 +331,7 @@ const App = () => {
                                 cityTax
                             )
                         }
-                        className="bg-blue-900 text-white rounded-full mx-auto px-2 border-2 border-gray-500 w-[50vw]"
+                        className="bg-blue-700 text-white rounded-full mx-auto px-2 border-2 border-gray-500 w-[50vw]"
                     >
                         Calculate
                     </button>
@@ -349,7 +348,7 @@ const App = () => {
                     <li className="text-center text-red-800">
                         {(cityTax * 100).toFixed(3)}%
                     </li>
-                    <li className="flex justify-center whitespace-nowrap text-sm text-blue-700">
+                    <li className="flex justify-center whitespace-nowrap text-sm text-blue-500">
                         {carPlan.id !== 0 && <p>{carPlan.name}</p>}
                     </li>
                 </ul>
