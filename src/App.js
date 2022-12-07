@@ -342,7 +342,7 @@ const App = () => {
                 <ul>
                     <li>City Taxes</li>
                     <li>Car Plan</li>
-                    <li>You Pay</li>
+                    <li>Total Cost</li>
                 </ul>
                 <ul className="">
                     <li className="text-center text-red-800">
