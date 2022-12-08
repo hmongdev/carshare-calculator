@@ -1,5 +1,10 @@
 import React, { useState } from 'react';
-import Swal from 'sweetalert2';
+
+// toastify
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+// modules
 import { cityTaxes } from './modules/cityTaxes';
 import { eviePlans } from './modules/carPlans';
 import { hourCarPlans } from './modules/carPlans';
@@ -36,21 +41,30 @@ const App = () => {
     const checkInputs = () => {
         // check if 1st choice is empty
         if (cityTax === 0) {
-            Swal.fire({
-                icon: 'error',
-                title: 'Oops...',
-                text: 'Select Your City!',
+            toast.error('Select Your City!', {
+                position: 'top-right',
+                autoClose: 4000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: true,
+                progress: undefined,
+                theme: 'light',
             });
-            // check if 2nd choice is empty
         } else if (
             carPlan.length === 0 ||
             carPlan === '--- Choose EVIE Plan ---' ||
             carPlan === '--- Choose HOURCAR Plan ---'
         ) {
-            Swal.fire({
-                icon: 'error',
-                title: 'Oops...',
-                text: 'Select A Car Plan!',
+            toast.error('Select Your Car Plan!', {
+                position: 'top-right',
+                autoClose: 4000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: true,
+                progress: undefined,
+                theme: 'light',
             });
         }
     };
@@ -100,6 +114,18 @@ const App = () => {
                     ))}
                 </div>
             </div>
+            <ToastContainer
+                position="top-right"
+                autoClose={4000}
+                hideProgressBar={false}
+                newestOnTop
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover={false}
+                theme="light"
+            />
             <div id="carType" className="my-2">
                 <h1 className="flex justify-center px-3 font-bold w-full text-xl md:text-2xl">
                     2. Choose A Car:
@@ -200,29 +226,28 @@ const App = () => {
                     </select>
                 </div>
             </div>
-
-            <table className="font-bold w-[90%] mx-auto my-5 text-xl">
-                <tr className="flex justify-between border-b border-gray-400 w-full">
-                    <td>City Taxes</td>
-                    <td className="text-red-700">
+            <div className="font-bold w-[90%] mx-auto my-5 text-xl">
+                <div className="flex justify-between border-b border-gray-400 w-full">
+                    <div>City Taxes</div>
+                    <div className="text-red-700">
                         {(cityTax * 100).toFixed(3)}%
-                    </td>
-                    <td>${taxCost.toFixed(2)}</td>
-                </tr>
-                <tr className="flex justify-between border-b border-gray-400 w-full">
-                    <td>Car Plan</td>
-                    <td className="text-blue-700">
+                    </div>
+                    <div>${taxCost.toFixed(2)}</div>
+                </div>
+                <div className="flex justify-between border-b border-gray-400 w-full">
+                    <div>Car Plan</div>
+                    <div className="text-blue-700">
                         {carPlan.id !== 0 && carPlan.name}
-                    </td>
-                    <td>${preTax.toFixed(2)}</td>
-                </tr>
-                <tr className="flex justify-between border-b border-gray-400 w-full">
-                    <td>Total Cost</td>
-                    <td className="text-red-600">
+                    </div>
+                    <div>${preTax.toFixed(2)}</div>
+                </div>
+                <div className="flex justify-between border-b border-gray-400 w-full">
+                    <div>Total Cost</div>
+                    <div className="text-red-600">
                         -${(preTax + taxCost).toFixed(2)}
-                    </td>
-                </tr>
-            </table>
+                    </div>
+                </div>
+            </div>
             <button
                 onClick={() =>
                     calculateCosts(userMinutes, userHours, userDays, cityTax)
