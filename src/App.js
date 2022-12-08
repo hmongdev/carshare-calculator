@@ -16,7 +16,7 @@ const App = () => {
     const [preTax, setPreTax] = useState(0);
     const [taxCost, setTaxCost] = useState(0);
 
-    const minutes = [0, 15, 30, 45];
+    const minutes = [...Array(60).keys()];
     const hours = [...Array(8).keys()];
     const days = [...Array(5).keys()];
 
@@ -84,7 +84,7 @@ const App = () => {
                 Carshare Trip Calculator
             </h1>
             <div id="city" className="my-2">
-                <h1 className="flex justify-center font-bold w-full text-xl">
+                <h1 className="flex justify-center font-bold w-full text-xl md:text-2xl">
                     1. Choose Your City
                 </h1>
                 <div className="flex flex-col gap-2 justify-evenly my-3">
@@ -101,7 +101,7 @@ const App = () => {
                 </div>
             </div>
             <div id="carType" className="my-2">
-                <h1 className="flex justify-center px-3 font-bold w-full text-xl">
+                <h1 className="flex justify-center px-3 font-bold w-full text-xl md:text-2xl">
                     2. Choose A Car:
                 </h1>
                 <div className="flex my-3">
@@ -122,7 +122,7 @@ const App = () => {
                 </div>
             </div>
             <div id="carPlan" className="my-2">
-                <h1 className="flex justify-center px-3 font-bold w-full text-xl">
+                <h1 className="flex justify-center px-3 font-bold w-full text-xl md:text-2xl">
                     3. Choose A Plan:
                 </h1>
                 {carType === 'HOURCAR' ? (
@@ -158,7 +158,7 @@ const App = () => {
                 )}
             </div>
             <div id="rentalDuration" className="w-full my-2">
-                <h1 className="flex justify-center p-3 font-bold w-full text-xl">
+                <h1 className="flex justify-center p-3 font-bold w-full text-xl md:text-2xl">
                     4. Rental Duration
                 </h1>
                 <div className="flex flex-col w-3/5 gap-3 mx-auto">
@@ -219,7 +219,7 @@ const App = () => {
                 <tr className="flex justify-between border-b border-gray-400 w-full">
                     <td>Total Cost</td>
                     <td className="text-red-600">
-                        -${(preTax + taxCost).toFixed(2)}
+                        -${Number((preTax + taxCost).toFixed(2))}
                     </td>
                 </tr>
             </table>
