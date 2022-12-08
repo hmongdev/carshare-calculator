@@ -80,7 +80,7 @@ const App = () => {
 
     return (
         <div className="flex flex-col w-full h-full">
-            <h1 className="flex justify-center items-center text-3xl bg-blue-700 py-5 text-white font-bold">
+            <h1 className="flex justify-center items-center text-3xl bg-blue-700 py-2 text-white font-bold">
                 Carshare Trip Calculator
             </h1>
             <div id="city" className="my-2">
@@ -219,7 +219,7 @@ const App = () => {
                 <tr className="flex justify-between border-b border-gray-400 w-full">
                     <td>Total Cost</td>
                     <td className="text-red-600">
-                        -${Number((preTax + taxCost).toFixed(2))}
+                        -${(preTax + taxCost).toFixed(2)}
                     </td>
                 </tr>
             </table>
@@ -227,7 +227,7 @@ const App = () => {
                 onClick={() =>
                     calculateCosts(userMinutes, userHours, userDays, cityTax)
                 }
-                className="text-2xl bg-orange-700 text-white rounded-md mx-auto uppercase h-[3rem] w-[50vw]"
+                className="text-2xl bg-orange-700 text-white rounded-md mx-auto uppercase h-[3rem] w-[50vw] mb-5"
             >
                 Calculate
             </button>
