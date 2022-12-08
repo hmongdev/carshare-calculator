@@ -128,7 +128,7 @@ const App = () => {
                 {carType === 'HOURCAR' ? (
                     <select
                         onChange={selectPlan}
-                        className="flex mx-auto w-4/5 border-2 gap-5 rounded-lg py-1 px-3"
+                        className="flex mx-auto w-3/5 border-2 gap-5 rounded-lg py-1 text-lg"
                     >
                         {hourCarPlans.map(({ id, name }) => (
                             <option
@@ -143,7 +143,7 @@ const App = () => {
                 ) : (
                     <select
                         onChange={selectPlan}
-                        className="flex mx-auto w-4/5 border-2 gap-5 rounded-lg py-1 px-3"
+                        className="flex mx-auto w-3/5 border-2 gap-5 rounded-lg py-1 text-lg"
                     >
                         {eviePlans.map(({ id, name }) => (
                             <option
@@ -164,7 +164,7 @@ const App = () => {
                 <div className="flex flex-col w-3/5 gap-3 mx-auto">
                     <select
                         onChange={(e) => setDays(Number(e.target.value))}
-                        className="border-2"
+                        className="border-2 py-1 rounded-lg text-lg"
                     >
                         {days.map((day, i) => {
                             return (
@@ -176,7 +176,7 @@ const App = () => {
                     </select>
                     <select
                         onChange={(e) => setHours(Number(e.target.value))}
-                        className="border-2"
+                        className="border-2 py-1 rounded-lg text-lg"
                     >
                         {hours.map((hour, i) => {
                             return (
@@ -188,7 +188,7 @@ const App = () => {
                     </select>
                     <select
                         onChange={(e) => setMinutes(Number(e.target.value))}
-                        className="border-2"
+                        className="border-2 py-1 rounded-lg text-lg"
                     >
                         {minutes.map((minute, i) => {
                             return (
