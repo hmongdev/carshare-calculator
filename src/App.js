@@ -21,9 +21,9 @@ const App = () => {
     const [preTax, setPreTax] = useState(0);
     const [taxCost, setTaxCost] = useState(0);
 
-    const minutes = [...Array(60).keys()];
+    const minutes = [0, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55];
     const hours = [...Array(8).keys()];
-    const days = [...Array(5).keys()];
+    const days = [...Array(4).keys()];
 
     const selectPlan = (e) => {
         for (let i = 0; i < eviePlans.length; i++) {
@@ -94,6 +94,18 @@ const App = () => {
 
     return (
         <div className="flex flex-col w-full h-full">
+            <ToastContainer
+                position="top-right"
+                autoClose={4000}
+                hideProgressBar={false}
+                newestOnTop
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover={false}
+                theme="light"
+            />
             <h1 className="flex justify-center items-center text-3xl bg-blue-700 py-2 text-white font-bold">
                 Carshare Trip Calculator
             </h1>
@@ -114,18 +126,6 @@ const App = () => {
                     ))}
                 </div>
             </div>
-            <ToastContainer
-                position="top-right"
-                autoClose={4000}
-                hideProgressBar={false}
-                newestOnTop
-                closeOnClick
-                rtl={false}
-                pauseOnFocusLoss
-                draggable
-                pauseOnHover={false}
-                theme="light"
-            />
             <div id="carType" className="my-2">
                 <h1 className="flex justify-center px-3 font-bold w-full text-xl md:text-2xl">
                     2. Choose A Car:
