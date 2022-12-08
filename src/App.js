@@ -204,17 +204,23 @@ const App = () => {
             <table className="font-bold w-[90%] mx-auto my-5 text-xl">
                 <tr className="flex justify-between border-b border-gray-400 w-full">
                     <td>City Taxes</td>
-                    <td>{(cityTax * 100).toFixed(3)}%</td>
+                    <td className="text-red-700">
+                        {(cityTax * 100).toFixed(3)}%
+                    </td>
                     <td>${taxCost.toFixed(2)}</td>
                 </tr>
                 <tr className="flex justify-between border-b border-gray-400 w-full">
                     <td>Car Plan</td>
-                    <td>{carPlan.id !== 0 && carPlan.name}</td>
+                    <td className="text-blue-700">
+                        {carPlan.id !== 0 && carPlan.name}
+                    </td>
                     <td>${preTax.toFixed(2)}</td>
                 </tr>
                 <tr className="flex justify-between border-b border-gray-400 w-full">
                     <td>Total Cost</td>
-                    <td>-${(preTax + taxCost).toFixed(2)}</td>
+                    <td className="text-red-600">
+                        -${(preTax + taxCost).toFixed(2)}
+                    </td>
                 </tr>
             </table>
             <button
